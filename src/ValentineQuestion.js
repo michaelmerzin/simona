@@ -21,7 +21,7 @@ const ValentineQuestion = ({ onAnswer }) => {
     }, 3000);
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
+  }, [images]);
 
   return (
     <div className="valentine-question">
