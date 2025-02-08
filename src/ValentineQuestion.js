@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useMemo } from "react";
 import './ValentineQuestion.css'; // Add a CSS file to style this component
 
 const ValentineQuestion = ({ onAnswer }) => {
-  const images = [
+
+  const yourImageArray = useMemo(() => [
     require('./images/IMG_2672.jpg'),
     require('./images/IMG_2673.jpg'),
     require('./images/IMG_2684.jpg')
     // Add more image paths as needed
-  ];
+  ], []);
+  
+  const images = useMemo(() => [...yourImageArray], [yourImageArray]);
+  
 
   const [currentImage, setCurrentImage] = useState(images[0]);
 
